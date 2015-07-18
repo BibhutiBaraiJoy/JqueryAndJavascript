@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home page</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<div class="fromDiv">
+			<form class="myform form-medium">
+				<h2>Contact Information</h2>
+					<div>
+						<label> First Name:</label>
+					    <input  id = "fName" name="fName" type="text" placeholder="type your first name please"/>
+					</div>
+					<div>
+						<label>Last Name:</label>
+						<input  id = "lName" name="lName"type="text" placeholder="type your Last Name please"/>
+					</div>
+					<div>
+						<label>Mobile No:</label>
+						<input id = "mobileNo" name="mobileNo" type="text"   onkeypress="return isNumber(event)" onpaste="return false;" ondrop = "return false; required=""  placeholder="type your mobile Number please"/><span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span>
+					</div>
+					<div>
+						<label>Email No:</label>
+						<input id = "email" name="email" type="text" placeholder="type your email please"/>
+					</div>
+					<div>
+						<label>Address:</label>
+					    <textarea id = "address" name ="address" type="textarea"rows="2"  placeholder="type your address please"></textarea>
+					</div>
+				<div >
+					<button type='submit'  value="Submit"  onclick="addContact()" id = "saveButton"/>Save</button>
+				</div>
+			</form> 
+		</div>
+		<div class="gridDiv">
+			<div>
+				<label> All Contacts:</label>
+				<input id="mobileNoSr" type="text"  required=""  placeholder="type your mobile Number For Search"/>
+				<button onclick="searchContact()" id = "searchButton" type="button">Search</button>
+				<button id="refreshButton" onclick="refreshContact()" type="button">Refresh</button>
+				<button id="clearButton" onclick="clearContact()" type="button">Clear</button>
+			</div>
+			<div>
+				<table  id="output">
+					 <tr>
+						<th>SN</th>
+						<th>First-name</th>
+						<th>Last-name</th>	
+						<th>Mobil</th>						
+						<th>Email</th>
+						<th>Address</th>
+						<th>Action</th>
+					 </tr>
+
+				</table>
+			</div>	
+			
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
